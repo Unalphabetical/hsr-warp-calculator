@@ -109,7 +109,7 @@ function Page() {
   }
 
   return (
-    <div className="min-h-screen ">
+    <div className="min-h-screen flex items-center justify-center px-4">
       <div className="container max-w-3xl p-6 mx-auto space-y-8">
         {/* Header */}
         {/* <div className="py-8 space-y-4 text-center">
@@ -125,7 +125,7 @@ function Page() {
         </div> */}
 
         {/* Main Card */}
-        <Card className="shadow-2xl bg-slate-900/50 border-slate-700/50 backdrop-blur-xl mt-20">
+        <Card className="shadow-2xl bg-slate-900/50 border-slate-700/50 backdrop-blur-xl">
           <CardContent className="space-y-8">
             {/* Game Selection */}
             <div className="space-y-3 ">
