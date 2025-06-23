@@ -47,6 +47,7 @@ function Page() {
     isWeaponGuaranteed: false,
     numSimulations: 10000,
     pulls: 0,
+    currency: 0,
     weaponCopies: 0,
     weaponPity: 0,
   });
@@ -81,6 +82,7 @@ function Page() {
       isWeaponGuaranteed: formData.isWeaponGuaranteed,
       numSimulations: formData.numSimulations,
       pulls: formData.pulls,
+      currency: formData.currency,
       weaponCopies: formData.weaponCopies,
       weaponPity: formData.weaponPity,
     });
@@ -97,7 +99,8 @@ function Page() {
 
   function validateForm() {
     return (
-      formData.pulls > 0 &&
+      (formData.pulls > 0 ||
+      formData.currency >= 160) &&
       formData.characterPity >= 0 &&
       formData.weaponPity >= 0 &&
       formData.numSimulations > 0 &&
@@ -192,6 +195,13 @@ function Page() {
               }
               pulls={formData.pulls}
               setPulls={(value) => updateFormData("pulls", value)}
+
+              currencyName={
+                  selectedGame.gameTerms.currencyName +
+                  selectedGame.gameTerms.currencyConjugation
+              }
+              currency={formData.currency}
+              setCurrency={(value) => updateFormData("currency", value)}
             />
 
             {/* Banner Configuration */}
@@ -252,7 +262,10 @@ function Page() {
             characterCopies={formData.characterCopies}
             gameTerms={selectedGame.gameTerms}
             numSimulations={formData.numSimulations}
+            totalPulls={formData.pulls + Math.floor(formData.currency / 160)}
             pulls={formData.pulls}
+            currency={formData.currency}
+            currencyPulls={Math.floor(formData.currency / 160)}
             successRate={successRate}
             weaponCopies={formData.weaponCopies}
           />

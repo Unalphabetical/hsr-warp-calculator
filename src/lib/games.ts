@@ -4,6 +4,8 @@ export interface IGameTerms {
   limitedCategory: string; //5 star , S tier, 5★
   pullName: string; // e.g. "Wish", "Warp"
   pullConjugation: string; //es , s   (wish-es, warp-s)
+  currencyName: string; // e.g. "Primogem", "Stellar Jade"
+  currencyConjugation: string; // e.g. "s" (Primogem-s, Stellar Jade-s)
   characterName: string; // "Agent", "Character"
   weaponName: string; // "W-Engine", "Light Cone"
 }
@@ -26,6 +28,8 @@ export const GAMES: IGame[] = [
       limitedCategory: "5★",
       pullName: "Warp",
       pullConjugation: "s",
+      currencyName: "Stellar Jade",
+      currencyConjugation: "s",
       characterName: "Character",
       weaponName: "Light Cone",
     },
@@ -63,6 +67,8 @@ export const GAMES: IGame[] = [
       limitedCategory: "5★",
       pullName: "Wish",
       pullConjugation: "es",
+      currencyName: "Primogem",
+      currencyConjugation: "s",
       characterName: "Character",
       weaponName: "Weapon",
     },
@@ -102,6 +108,8 @@ export const GAMES: IGame[] = [
       characterName: "Agent",
       pullName: "Signal Search",
       pullConjugation: "es",
+      currencyName: "Polychrome",
+      currencyConjugation: "s",
       weaponName: "W-Engine",
     },
     simulationSettings: {
@@ -139,6 +147,8 @@ export const CUSTOM_GAME: IGame = {
     limitedCategory: "5★",
     pullName: "Pull",
     pullConjugation: "s",
+    currencyName: "Currenc",
+    currencyConjugation: "ies",
     characterName: "Character",
     weaponName: "Weapon",
   },
