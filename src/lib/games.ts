@@ -147,7 +147,7 @@ export const CUSTOM_GAME: IGame = {
     limitedCategory: "5★",
     pullName: "Pull",
     pullConjugation: "s",
-    currencyName: "Currenc",
+    currencyName: "Currency",
     currencyConjugation: "ies",
     characterName: "Character",
     weaponName: "Weapon",
