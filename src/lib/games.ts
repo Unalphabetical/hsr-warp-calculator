@@ -56,6 +56,7 @@ export const GAMES: IGame[] = [
         limitedOptions: 1,
         limitedRate: 0.75,
       },
+      conversionRate: 160
     },
   },
   // Genshin Impact
@@ -96,6 +97,7 @@ export const GAMES: IGame[] = [
         softPity: 64,
         softPityIncrement: 0.06,
       },
+      conversionRate: 160
     },
   },
   // Zenless Zone Zero
@@ -135,6 +137,7 @@ export const GAMES: IGame[] = [
         limitedOptions: 1,
         limitedRate: 0.75,
       },
+      conversionRate: 160
     },
   },
 ] as const;
@@ -148,7 +151,7 @@ export const CUSTOM_GAME: IGame = {
     pullName: "Pull",
     pullConjugation: "s",
     currencyName: "Currency",
-    currencyConjugation: "ies",
+    currencyConjugation: "",
     characterName: "Character",
     weaponName: "Weapon",
   },
@@ -175,5 +178,6 @@ export const CUSTOM_GAME: IGame = {
       softPity: 64,
       softPityIncrement: 0.06,
     },
+    conversionRate: 160
   },
 } as const;

@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useState } from "react";
+import {Suspense, useEffect, useState} from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -50,6 +50,7 @@ function Page() {
     currency: 0,
     weaponCopies: 0,
     weaponPity: 0,
+    conversionRate: 160,
   });
 
   function updateFormData(key: keyof ISimulatorInput, value: number | boolean) {
@@ -85,6 +86,7 @@ function Page() {
       currency: formData.currency,
       weaponCopies: formData.weaponCopies,
       weaponPity: formData.weaponPity,
+      conversionRate: formData.conversionRate
     });
     setSuccessRate(res);
 
@@ -97,11 +99,15 @@ function Page() {
     }, 100);
   }
 
+  const conversionRate = selectedGame.id === "custom"
+      ? customSimulationSettings.conversionRate
+      : selectedGame.simulationSettings.conversionRate;
+
   function validateForm() {
     return (
       (formData.pulls > 0
         ? formData.currency >= 0
-        : formData.currency >= 160) &&
+        : formData.currency >= conversionRate) &&
       formData.characterPity >= 0 &&
       formData.weaponPity >= 0 &&
       formData.numSimulations > 0 &&
@@ -261,16 +267,18 @@ function Page() {
         {successRate >= 0 && (
           <SimulationResultsCard
             characterCopies={formData.characterCopies}
+
             gameTerms={selectedGame.gameTerms}
             numSimulations={formData.numSimulations}
-            totalPulls={formData.pulls + Math.floor(formData.currency / 160)}
+            totalPulls={formData.pulls + Math.floor(formData.currency / conversionRate)}
             pulls={formData.pulls}
             currency={formData.currency}
-            currencyPulls={Math.floor(formData.currency / 160)}
+            currencyPulls={Math.floor(formData.currency / conversionRate)}
             successRate={successRate}
             weaponCopies={formData.weaponCopies}
           />
         )}
+
       </div>
     </div>
   );
