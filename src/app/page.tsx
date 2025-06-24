@@ -99,8 +99,9 @@ function Page() {
 
   function validateForm() {
     return (
-      (formData.pulls > 0 ||
-      formData.currency >= 160) &&
+      (formData.pulls > 0
+        ? formData.currency >= 0
+        : formData.currency >= 160) &&
       formData.characterPity >= 0 &&
       formData.weaponPity >= 0 &&
       formData.numSimulations > 0 &&
