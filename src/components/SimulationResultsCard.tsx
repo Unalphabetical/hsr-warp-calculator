@@ -14,7 +14,6 @@ interface Props {
   successRate: number;
   totalPulls: number;
   pulls: number;
-  currency: number;
   currencyPulls: number;
   characterCopies: number;
   weaponCopies: number;
