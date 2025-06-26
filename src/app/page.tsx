@@ -272,7 +272,6 @@ function Page() {
             numSimulations={formData.numSimulations}
             totalPulls={formData.pulls + Math.floor(formData.currency / conversionRate)}
             pulls={formData.pulls}
-            currency={formData.currency}
             currencyPulls={Math.floor(formData.currency / conversionRate)}
             successRate={successRate}
             weaponCopies={formData.weaponCopies}
