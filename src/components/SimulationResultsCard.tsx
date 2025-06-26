@@ -49,7 +49,7 @@ export default function SimulationResultsCard({
           the chance you have of getting <strong>{characterCopies}</strong>{" "}
           Limited {gameTerms.characterName} and <strong>{weaponCopies}</strong>{" "}
           Limited {gameTerms.weaponName} copies with{" "}
-          <strong>{pulls.toLocaleString()}</strong> warps
+          <strong>{totalPulls.toLocaleString()}</strong> warps
         </CardDescription>
       </CardHeader>
 
